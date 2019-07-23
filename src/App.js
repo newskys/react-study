@@ -5,5 +5,5 @@ export default class App extends React.Component {
         return (
             <h1>This is HOT!</h1>
         )
-    }
+    }///////
 }
