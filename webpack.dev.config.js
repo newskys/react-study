@@ -27,14 +27,15 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                query:
-                {
-                    presets: ['react'],
+                use: {
+                    loader: 'babel-loader'
                 }
             }
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'],
     }
 };
