@@ -1,9 +1,17 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+import { Home, About } from './pages';
 
-export default class App extends React.Component {
+class App extends React.Component {
+   
     render() {
         return (
-            <h1>This is HOT!</h1>
+            <div>
+                <Route exact path="/" exact component={Home} />
+                <Route exact path="/about" component={About} />
+            </div>
         )
     }
 }
+
+export default App;
