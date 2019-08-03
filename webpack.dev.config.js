@@ -14,6 +14,7 @@ module.exports = {
         inline: true,
         contentBase: __dirname + '/public/',
         host: '0.0.0.0',
+        historyApiFallback: true,
         headers: {
             'Access-Control-Allow-Origin': '*',
         },
@@ -27,14 +28,15 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                query:
-                {
-                    presets: ['react'],
+                use: {
+                    loader: 'babel-loader'
                 }
             }
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'],
     }
 };
