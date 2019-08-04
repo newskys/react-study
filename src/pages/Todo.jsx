@@ -6,6 +6,9 @@ class Todo extends React.Component {
         const { match } = this.props;
 
         console.log(match.params.todo); // url에 /todos/1 이라고 치고 들어오면 1 이라는 값이 출력됨
+
+
+        // 이 부분에 AJAX 통신 추가
     }
 
     render() {
@@ -14,6 +17,8 @@ class Todo extends React.Component {
         return (
             <>
                 {match.params.todo}
+                
+                {/* AJAX 통신으로 받아온 데이터를 보여주는 코드 추가 */}
             </>
         )
     }
