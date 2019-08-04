@@ -33,7 +33,7 @@ class TodoList extends React.Component {
                         {todos.map(item =>
                             <tr key={`todo-${item.id}`}>
                                 <th>{item.id}</th>
-                                <td>{item.title}</td>
+                                <td>{item.title}</td> {/* 이 부분에 Todo 페이지로 넘기는 코드 사용 */}
                             </tr>
                         )}
                         </tbody>
