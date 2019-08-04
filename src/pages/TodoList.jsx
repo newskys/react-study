@@ -30,9 +30,9 @@ class TodoList extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                        {todos.map((item, index) =>
-                            <tr key={`todo-${index}`}>
-                                <th>{index}</th>
+                        {todos.map(item =>
+                            <tr key={`todo-${item.id}`}>
+                                <th>{item.id}</th>
                                 <td>{item.title}</td>
                             </tr>
                         )}
