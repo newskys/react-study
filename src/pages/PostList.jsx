@@ -23,10 +23,11 @@ class PostList extends React.Component {
                 <div style={{textAlign: "center"}}>
                     <h3>글 목록</h3>
                 </div>
+                
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-xs-12">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
+                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{ width:"100%" }}/>
                         <div style={{textAlign: "center"}}>contents</div>
                         </div>
                     </div>
