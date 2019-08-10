@@ -20,58 +20,14 @@ class ImageList extends React.Component {
     render() {
         return (
             <>
-                <div className="container-fluid" style={{paddingLeft: '30px', paddingRight: '30px', paddingBottom: '30px'}}>
-                    <div className="row" style={{paddingTop: '30px'}}>
-                        <div className="col-xs-6">
+                <div style={{textAlign: "center"}}>
+                    <h3>글 목록</h3>
+                </div>
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-xs-12">
                             <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
-                        </div>
-                        <div className="col-xs-6">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
-                        </div>
-                    </div>
-
-                    <div className="row" style={{paddingTop: '30px'}}>
-                        <div className="col-xs-6">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
-                        </div>
-                        <div className="col-xs-6">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
-                        </div>
-                    </div>
-
-                    <div className="row" style={{paddingTop: '30px'}}>
-                        <div className="col-xs-6">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
-                        </div>
-                        <div className="col-xs-6">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
-                        </div>
-                    </div>
-
-                    <div className="row" style={{paddingTop: '30px'}}>
-                        <div className="col-xs-6">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
-                        </div>
-                        <div className="col-xs-6">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
-                        </div>
-                    </div>
-
-                    <div className="row" style={{paddingTop: '30px'}}>
-                        <div className="col-xs-6">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
-                        </div>
-                        <div className="col-xs-6">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
-                        </div>
-                    </div>
-
-                    <div className="row" style={{paddingTop: '30px'}}>
-                        <div className="col-xs-6">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
-                        </div>
-                        <div className="col-xs-6">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{width:'100%'}}/>
+                        <div style={{textAlign: "center"}}>contents</div>
                         </div>
                     </div>
                 </div>
