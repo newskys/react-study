@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-class ImageList extends React.Component {
+class PostList extends React.Component {
     state = {
         images: null,
     };
@@ -36,4 +36,4 @@ class ImageList extends React.Component {
     }
 }
 
-export default ImageList;
+export default PostList;
