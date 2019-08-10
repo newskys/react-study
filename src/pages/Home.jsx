@@ -1,13 +1,14 @@
 import React from 'react';
-import Header from './Header';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
-    return (
-        <div>
-            <Header />
-            홈
-        </div>
-    );
-};
+class Home extends React.Component {
+    render() {
+        return (
+            <ul>
+                <li><Link to="/todos">TODO LIST</Link></li>
+            </ul>
+        )
+    }
+}
 
 export default Home;

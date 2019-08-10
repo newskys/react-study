@@ -1,15 +1,19 @@
 import React from 'react';
-import Router from './Router';
-import Header from './pages/Header';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
+import TodoList from './pages/TodoList';
+import Todo from './pages/Todo';
 
-class App extends React.Component {
+export default class App extends React.Component {
     render() {
         return (
-            <>
-                <Router />
-            </>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/todos/:todo" component={Todo} />
+                    <Route exact path="/todos" component={TodoList} />
+                    <Route path="/" component={Home} />
+                </Switch>
+            </BrowserRouter>
         )
     }
 }
-
-export default App;
