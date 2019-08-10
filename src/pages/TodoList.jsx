@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class TodoList extends React.Component {
     state = {
@@ -33,7 +34,10 @@ class TodoList extends React.Component {
                         {todos.map(item =>
                             <tr key={`todo-${item.id}`}>
                                 <th>{item.id}</th>
-                                <td>{item.title}</td> {/* 이 부분에 Todo 페이지로 넘기는 코드 사용 */}
+                                <td><Link to={`/todos/${item.id}`}>{item.title}</Link></td> { /// 이 부분 어려웠음
+                                    /* 이 부분에 Todo 페이지로 넘기는 코드 사용 */
+
+                                    }
                             </tr>
                         )}
                         </tbody>
