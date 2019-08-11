@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PostItem from './PostItem';
 
 class PostList extends React.Component {
     state = {
@@ -10,14 +11,16 @@ class PostList extends React.Component {
         axios
         .get('https://jsonplaceholder.typicode.com/photos')
         .then((res) => {
-            console.log(res.data);
+            console.log(res.data.slice(0, 10));
             this.setState({
-                images: res.data,
+                images: res.data.slice(0, 10),
             });
         });
     }
 
     render() {
+        const { images } = this.state;
+
         return (
             <>
                 <div style={{ textAlign: "center" }}>
@@ -25,14 +28,9 @@ class PostList extends React.Component {
                 </div>
 
                 <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-xs-12">
-                            <img className="img-rounded" src="https://via.placeholder.com/150/92c952" style={{ width:"100%" }}/>
-                            <div style={{ textAlign: "center" }}>
-                                contents
-                            </div>
-                        </div>
-                    </div>
+                {images && images.map((item, index) =>
+                    <PostItem item={item} index={index} />
+                )}
                 </div>
             </>
         )
