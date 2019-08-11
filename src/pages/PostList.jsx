@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import PostItem from './PostItem';
+import TopButton from './TopButton';
 
 class PostList extends React.Component {
     state = {
@@ -29,9 +30,10 @@ class PostList extends React.Component {
 
                 <div className="container-fluid">
                 {images && images.map((item, index) =>
-                    <PostItem item={item} index={index} />
+                    <PostItem key={`postitem-${index}`} item={item} />
                 )}
                 </div>
+                <TopButton />
             </>
         )
     }

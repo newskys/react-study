@@ -1,16 +1,20 @@
 import React from 'react';
+import LikeButton from './LikeButton';
+import CommentButton from './CommentButton';
 
 class PostItem extends React.Component {
     render() {
-        const { item, index } = this.props;
+        const { item } = this.props;
 
         return (
-            <div key={`images-${index}`} className="row">
+            <div className="row">
             <div className={"col-xs-12"}>
                 <img className="img-rounded" src={item.thumbnailUrl} style={{ width:"100%" }}/>
-                <div style={{ textAlign: "center" }}>
-                    {item.title}
-                </div>
+                <p className="text-right">
+                    <LikeButton />
+                    <CommentButton />
+                </p>
+                
             </div>
         </div>
         )
