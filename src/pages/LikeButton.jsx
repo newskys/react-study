@@ -7,7 +7,7 @@ class LikeButton extends React.Component {
     };
 
     handleClick = () => {
-        // 클릭했을 때 코드 작성
+        // 클릭했을 때 코드 작성 (AJAX 같은 거 사용하지 않고 그냥 state만 사용해서 작성)
     }
 
     render() {
