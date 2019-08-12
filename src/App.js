@@ -1,21 +1,21 @@
 import React from 'react';
-import {BrowserRouter,Route,Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
-import About from './pages/About';
+import TodoList from './pages/TodoList';
+import Todo from './pages/Todo';
+import PostList from './pages/PostList';
 
 export default class App extends React.Component {
     render() {
-        return ( // 경로가 정확히 일치할 땐 exact 
-            // switch에서 about에서 home이 뜨는 이유 -> break가 home에서 걸려버림
-            // exact를 붙이거나 위치를 변경
+        return (
             <BrowserRouter>
-            <Switch>
-                <Route path="/about" component={About}></Route>
-                <Route path="/" component={Home}></Route> 
-
-            </Switch>
-                
-            </BrowserRouter>  
+                <Switch>
+                    <Route exact path="/todos/:todo" component={Todo} />
+                    <Route exact path="/todos" component={TodoList} />
+                    <Route exact path="/posts" component={PostList} />
+                    <Route path="/" component={Home} />
+                </Switch>
+            </BrowserRouter>
         )
     }
 }
