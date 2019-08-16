@@ -2,10 +2,11 @@ import React from 'react';
 import './TodoList.css';
 import Form from './Form';
 import TodoItemList from './TodoItemList';
+import axios from 'axios';
 
 class TodoList extends React.Component {
     state = {
-        list: [],
+        list: [{todo: '1'}],
     };
 
     componentDidMount() {
@@ -18,7 +19,7 @@ class TodoList extends React.Component {
 
     submitTodo = (todoName) => {
         // Ajax로 todoName 값을 DB에 넣음
-
+        // axios.post(주소, {todo: 할일내용})
         
         // 이후 리스트 다시 가져옴
         this.getList();
