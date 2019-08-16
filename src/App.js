@@ -1,9 +1,12 @@
 import React from 'react';
+import TodoList from './components/TodoList';
 
 export default class App extends React.Component {
     render() {
         return (
-            <h1>This is HOT!</h1>
+            <>
+                <TodoList />
+            </>
         )
     }
 }
