@@ -6,7 +6,7 @@ import axios from 'axios';
 
 class TodoList extends React.Component {
     state = {
-        list: [{todo: '1'}],
+        list: [],
     };
 
     componentDidMount() {
