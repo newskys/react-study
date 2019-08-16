@@ -6,6 +6,7 @@ class Home extends React.Component {
         return (
             <ul>
                 <li><Link to="/todos">TODO LIST</Link></li>
+                <li><Link to="/posts">POST LIST</Link></li>
             </ul>
         )
     }
