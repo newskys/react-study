@@ -2,7 +2,7 @@ import React from 'react';
 
 class TopButton extends React.Component {
     handleClick = () => {
-        // 클릭했을 때 코드 작성
+        window.scrollTo(0,0);
     };
 
     render() {

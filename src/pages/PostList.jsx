@@ -25,7 +25,7 @@ class PostList extends React.Component {
         return (
             <>
                 <div style={{ textAlign: "center" }}>
-                    <h3>글 목록</h3>
+                    <h3 ref ={(ref)=>this.h3=ref}>글 목록</h3>
                 </div>
 
                 <div className="container-fluid">
