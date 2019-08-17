@@ -20,7 +20,7 @@ class TopButton extends React.Component {
         //     })
         // }
 
-        window.location.reload(); // 도저히 새로고침 없이 최상단 이동 방법은 모르겟듬...
+        window.location.reload(); // 도저히 새로고침 없이 최상단 이동 방법을 모르겟듬...
     };
 
     render() {
