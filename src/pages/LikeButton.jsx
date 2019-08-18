@@ -7,7 +7,14 @@ class LikeButton extends React.Component {
     };
 
     handleClick = () => {
-        // 클릭했을 때 코드 작성 (AJAX 같은 거 사용하지 않고 그냥 state만 사용해서 작성)
+        // 클릭했을 때 코드 작성 (AJAX 필요 없이 그냥 state만 사용해서 작성)
+        const { isLike, likeCount } = this.state;
+        const newLikeCount = isLike ? likeCount - 1 : likeCount + 1;
+
+        this.setState({
+            isLike: !isLike,
+            likeCount: newLikeCount,
+        });
     }
 
     render() {
@@ -20,7 +27,7 @@ class LikeButton extends React.Component {
                     좋아요 안 했을 때(기본) className은 glyphicon glyphicon-heart-empty
                     좋아요 했을 때 className은 glyphicon glyphicon-heart
                  */}
-                <span className={`glyphicon glyphicon-heart-empty`} aria-hidden="true"> {likeCount}</span>
+                <span className={`glyphicon glyphicon-heart${isLike ? `` : `-empty`}`} aria-hidden="true"> {likeCount}</span>
             </button>
         )
     }
