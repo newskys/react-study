@@ -9,21 +9,29 @@ class LikeButton extends React.Component {
     handleClick = () => {
         // 클릭했을 때 코드 작성 (AJAX 같은 거 사용하지 않고 그냥 state만 사용해서 작성)
         
-        /*isLike ? handleClicka():*/
-        this.setState({
-            isLike : !this.state.isLike,
-            likeCount :this.state.likeCount?0:1,
-            //왜 저는  likeCount : !this.state.likeCount이게 안될까요?
+        const { isLike } = this.state;
 
+        
+        // if (isLike)  {
+        //     this.handleClicka();
+        //     return;
+        // }
+
+        isLike ? 
+        this.handleClicka() : 
+        this.setState({isLike : !this.state.isLike,
+            likeCount : !this.state.likeCount,
+            //왜 저는  likeCount : !this.state.likeCount이게 안될까요?
         })
         
     }
-    /*handleClicka = () =>{
+    handleClicka = () =>{
         this.setState({
             isLike : false,
             likeCount :0,
         });
-    } 이렇게 하는건 왜 안될까요 ㅠㅠ*/
+    }
+
     render() {
         const { isLike, likeCount } = this.state;
 
