@@ -7,7 +7,7 @@ class TodoItemList extends Component {
 
         return (
             <div>
-                {list.map((item, index) => <TodoItem key={`todoitem-${index}`} text={''} />)}
+                {list.map((item, index) => <TodoItem key={`todoitem-${index}`} text={item.todo} />)}
             </div>
         );
     }
