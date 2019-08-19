@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import './TodoItem.css';
+import axios from 'axios';
 
 class TodoItem extends Component {
-    handleRemove = (e) => {
-        // 삭제 API
+    handleRemove = (id) => {
+        const { removeTodo } = this.props;
+
+        removeTodo();
+        // // 삭제 API
+        // axios.delete(`https://tuhon.herokuapp.com/reactstudy/kyusik/todo/${id}`)
+        // .then(res => console.log(res));
     };
 
     render() {
         const { text, id } = this.props;
+        console.log(id);
 
         return (
         <div className="todo-item">
