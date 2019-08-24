@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './TodoItem.css';
 import axios from 'axios';
+import { increment, decrement } from '../redux/reducers/count';
+import { connect } from 'react-redux';
 
 class TodoItem extends Component {
     handleRemove = (id) => {
