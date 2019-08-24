@@ -37,7 +37,7 @@ class TodoList extends React.Component {
             // {todoName} 아니고 todoName!
 
             // 이후 리스트 다시 가져옴
-            //.then((res) =>this.getList(res));
+            //.then((res) =>this.getList());
 
             this.getList();
     }

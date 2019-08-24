@@ -4,13 +4,12 @@ import TodoItem from './TodoItem';
 class TodoItemList extends Component {
     render() {
         const { list } = this.props;
+
         return (
             <div>
-                {list.map((item, index) => <TodoItem key={`todoitem-${index}`} text={item.todo} removeTodo={removeTodo}/>)//id도 같이 넘겨줘야함, 삭제할 때 사용!(key값임)
-                }
+                {list.map((item, index) => <TodoItem key={`todoitem-${index}`} text={item.todo} />)}
             </div>
         );
     }
 }
-
 export default TodoItemList;
