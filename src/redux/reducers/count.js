@@ -13,7 +13,7 @@ const initialState = {
     count: 0,
 }
 
-function count(state = initialState, action) {
+const count = (state = initialState, action) => {
     switch (action.type) {
         case INCREMENT:
             return {
