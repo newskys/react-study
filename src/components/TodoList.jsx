@@ -7,6 +7,7 @@ import axios from 'axios';
 class TodoList extends React.Component {
     state = {
         list: [],
+        name : null,
     };
 
     componentDidMount() {
@@ -15,7 +16,7 @@ class TodoList extends React.Component {
 
     getList = () => {
         // Ajax로 가져온 데이터를 list state에 넣음
-        axios.get('https://tuhon.herokuapp.com/reactstudy/kyusik/todo')
+        axios.get(`https://tuhon.herokuapp.com/reactstudy/xeme/todo`)
         .then(res => {this.setState({ list: res.data }); console.log(res.data)});
         // console.log(res.data);
     }
@@ -23,8 +24,7 @@ class TodoList extends React.Component {
     submitTodo = (todoName) => {
         // Ajax로 todoName 값을 DB에 넣음
         // axios.post(주소, {todo: 할일내용})
-
-        axios.post('https://tuhon.herokuapp.com/reactstudy/kyusik/todo', { todo: todoName })
+        axios.post('https://tuhon.herokuapp.com/reactstudy/xeme/todo', { todo: todoName })
         .then(res => this.getList());
         
         // 이후 리스트 다시 가져옴
@@ -33,6 +33,7 @@ class TodoList extends React.Component {
 
     removeTodo = (id) => {
         // axios.delete(.....);
+
     }
 
     render() {
