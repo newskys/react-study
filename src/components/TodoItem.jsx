@@ -11,8 +11,7 @@ class TodoItem extends Component {
     };
 
     render() {
-        const { text, id, count } = this.props;
-        console.log(count);
+        const { text, id } = this.props;
 
         return (
         <div className="todo-item">
