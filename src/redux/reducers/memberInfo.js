@@ -16,8 +16,8 @@ export const setColorName = (colorName) => ({
 
 const initialState = {
     // 코드 추가
-    memberName: 'test',
-    colorName: 'test',
+    memberName: '',
+    colorName: '',
 }
 
 // Reducer
