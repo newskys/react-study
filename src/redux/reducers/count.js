@@ -1,12 +1,14 @@
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 
-export const increment = () => ({
+export const increment = (value) => ({
     type: INCREMENT,
-})
+    payload: value,
+});
 
-export const decrement = () => ({
+export const decrement = (value) => ({
     type: DECREMENT,
+    payload: value,
 })
 
 const initialState = {
@@ -18,12 +20,12 @@ const count = (state = initialState, action) => {
         case INCREMENT:
             return {
                 ...state,
-                count: state.count + 1,
+                count: state.count + action.payload,
             }
         case DECREMENT:
             return {
                 ...state,
-                count: state.count - 1,
+                count: state.count - action.payload,
             }
         default:
             return state;
