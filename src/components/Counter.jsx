@@ -7,6 +7,8 @@ import axios from 'axios';
 
 class Counter extends React.Component {
     componentDidMount() {
+        // const {  } = this.props;
+        
         axios.get(`https://tuhon.herokuapp.com/reactstudy/member`)
         .then(res => {
             console.log(res.data);
