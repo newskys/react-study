@@ -8,11 +8,14 @@ import axios from 'axios';
 
 class Counter extends React.Component {
     componentDidMount() {
+        // const {setMemberName, setColorName } = this.props; // 해당 방법도 사용 가능
         axios.get(`https://tuhon.herokuapp.com/reactstudy/member`)
         .then(res => {
             console.log(res.data);
-            setMemberName(res.data.memberName);
-            setColorName(res.data.colorName);
+            this.props.setMemberName(res.data.memberName);
+            this.props.setColorName(res.data.colorName);
+            // props 함수가 아닌 기본 함수(setMemberName()) 호출 시 js파일 내 해당 함수만 실행되고 이후 action은 실행 안 됨
+            // redux는 모두 props로 구성, 따라서 해당 함수를 호출해야 함
         });
     }
 
