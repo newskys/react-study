@@ -13,7 +13,7 @@ const initialState = {
     // 코드 추가
 }
 
-const member = (state = initialState, action) => {
+const memberInfo = (state = initialState, action) => {
     switch (action.type) {
         case SET_MEMBER:
             return {
@@ -24,7 +24,9 @@ const member = (state = initialState, action) => {
             return {
                 // 코드 추가
             }
+        default:
+            return state;
     }
 }
 
-export default member;
+export default memberInfo;

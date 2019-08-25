@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import count from './count';
-import member from './member';
+import memberInfo from './memberInfo';
 
 const reducers = combineReducers({
     count,
-    // member,
+    // 코드 추가
 });
 
 export default reducers;

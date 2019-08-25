@@ -11,14 +11,13 @@ class Counter extends React.Component {
         .then(res => {
             console.log(res.data);
             // setMemberName(파라미터);
-            // setMemberColorName(파라미터);
+            // setColorName(파라미터);
         });
     }
 
     render() {
         const { count, increment, decrement } = this.props;
 
-        // console.log('count', count.count);
         return (
             <main className="todo-list-template">
                 <div className="title">
@@ -26,7 +25,7 @@ class Counter extends React.Component {
                 </div>
                 <section className="form-wrapper">
                     <div className="form">
-                        <input readOnly={true} value={count.count} />
+                        <input readOnly={true} value={count} />
                         <div className="create-button" onClick={() => increment(1)}>증가</div>
                         <div className="create-button" onClick={() => decrement(1)}>감소</div>
                     </div>
@@ -43,7 +42,7 @@ class Counter extends React.Component {
 
 export default connect(
     (state) => ({
-        count: state.count,
+        count: state.count.count, // state(redux 전체 스토어) 내의 count 라는 이름의 스토어(count.js) 내의 count 값
     }),
     {
         increment,
