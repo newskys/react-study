@@ -10,8 +10,25 @@ class TodoList extends React.Component {
         name: null
     };
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextState.name !== this.state.name ||
+            nextState.list.length !== this.state.list.length;
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.name !== this.state.name) {
+            axios.get(`https://tuhon.herokuapp.com/reactstudy/${this.state.name}/todo`)
+                .then((res) => {
+                    console.log('member_data', res.data);
+    
+                    this.setState({
+                        list: res.data
+                    })
+                });
+        }
+    }
+
     componentDidMount() {
-        
         // 멤버 이름 가져오기
         axios.get(`https://tuhon.herokuapp.com/reactstudy/member`)
         .then((res) => {
@@ -22,14 +39,7 @@ class TodoList extends React.Component {
             })
 
             // 해당 멤버의 데이터 가져오기
-            axios.get(`https://tuhon.herokuapp.com/reactstudy/${res.data.memberName}/todo`)
-            .then((res) => {
-                console.log('member_data', res.data);
-
-                this.setState({
-                    list: res.data
-                })
-            });
+            
         });
     }
 
