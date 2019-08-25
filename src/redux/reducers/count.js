@@ -21,7 +21,7 @@ const initialState = { // null 일 때 들어가는 default 값
 
 }
 
-// reducer 이게 뭐라고,,? 실행 동작,,?
+// reducer 이게 뭐라고,,? 실행 동작,,?!
 const count = (state = initialState, action) =>{
 
     switch (action.type){ 
