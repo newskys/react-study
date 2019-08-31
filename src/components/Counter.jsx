@@ -4,21 +4,23 @@ import './Counter.css';
 import { connect } from 'react-redux';
 import { increment, decrement } from '../redux/reducers/count';
 import axios from 'axios';
+import  { setMemberName, setColorName } from '../redux/reducers/memberInfo';
+
 
 class Counter extends React.Component {
     componentDidMount() {
-        // const {  } = this.props;
-        
+         const { setMemberName, setColorName } = this.props;
         axios.get(`https://tuhon.herokuapp.com/reactstudy/member`)
         .then(res => {
             console.log(res.data);
-            // setMemberName(파라미터);
-            // setColorName(파라미터);
+            setMemberName(res.data.memberName);
+            setColorName(res.data.colorName);
         });
+        //count.js에있는 것드릉ㄴ...
     }
 
     render() {
-        const { count, increment, decrement } = this.props;
+        const { count, increment, decrement ,memberName,colorName} = this.props;
 
         return (
             <main className="todo-list-template">
@@ -33,8 +35,8 @@ class Counter extends React.Component {
                     </div>
                     <br/>
                     <div className="form">
-                        <input readOnly={true} value={'멤버이름'} />
-                        <input readOnly={true} value={'색깔'} />
+                        <input readOnly={true} value={memberName} />
+                        <input readOnly={true} value={colorName} />
                     </div>
                 </section>
             </main>
@@ -44,10 +46,16 @@ class Counter extends React.Component {
 
 export default connect(
     (state) => ({
-        count: state.count.count, // state(redux 전체 스토어) 내의 count 라는 이름의 스토어(count.js) 내의 count 값
+        count: state.count.count,
+         // state(redux 전체 스토어) 내의 count 라는 이름의 스토어(count.js) 내의 count 값
+         memberName : state.memberInfo.memberName,
+         colorName: state.memberInfo.colorName,
+
     }),
     {
         increment,
         decrement,
+        setColorName,
+        setMemberName,
     },
 )(Counter);

@@ -3,14 +3,20 @@ const SET_COLOR = 'SET_COLOR';
 
 export const setMemberName = (memberName) => ({
     // 코드 추가
+    type : SET_MEMBER,
+    payload: memberName,
 });
 
 export const setColorName = (colorName) => ({
     // 코드 추가
+    type : SET_COLOR,
+    payload: colorName,
 });
 
 const initialState = {
     // 코드 추가
+    memberName : '',
+    colorName : '',
 }
 
 const memberInfo = (state = initialState, action) => {
@@ -18,11 +24,15 @@ const memberInfo = (state = initialState, action) => {
         case SET_MEMBER:
             return {
                 // 코드 추가
+                ...state,
+                memberName: state.memberName + action.payload,
             }
         
         case SET_COLOR:
             return {
                 // 코드 추가
+                ...state,
+                colorName : state.colorName + action.payload,
             }
         default:
             return state;
