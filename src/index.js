@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import { createStore } from 'redux';
-import reducers from './redux/reducers';
 import { Provider } from 'react-redux';
 
 import { ConnectedRouter } from 'connected-react-router';

@@ -2,7 +2,7 @@ import React from 'react';
 import './Counter.css';
 
 import { connect } from 'react-redux';
-import { increment, decrement } from '../redux/reducers/count';
+import { increment, decrement, incrementAsync } from '../redux/reducers/count';
 import { setMemberName, setColorName } from '../redux/reducers/memberInfo';
 import axios from 'axios';
 
@@ -20,7 +20,7 @@ class Counter extends React.Component {
     }
 
     render() {
-        const { count, increment, decrement, memberName, colorName } = this.props;
+        const { count, incrementAsync, decrement, memberName, colorName } = this.props;
 
         return (
             <main className="todo-list-template">
@@ -30,7 +30,7 @@ class Counter extends React.Component {
                 <section className="form-wrapper">
                     <div className="form">
                         <input readOnly={true} value={count} />
-                        <div className="create-button" onClick={() => increment(1)}>증가</div>
+                        <div className="create-button" onClick={() => incrementAsync(1)}>증가</div>
                         <div className="create-button" onClick={() => decrement(1)}>감소</div>
                     </div>
                     <br/>
@@ -52,6 +52,7 @@ export default connect(
     }),
     {
         increment,
+        incrementAsync,
         decrement,
         setMemberName,
         setColorName,
