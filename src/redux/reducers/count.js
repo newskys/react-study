@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 
@@ -5,6 +7,18 @@ export const increment = (value) => ({
     type: INCREMENT,
     payload: value,
 });
+
+export const incrementAsync = (value) => async (dispatch) => {
+    const result = await axios.get(`https://jsonplaceholder.typicode.com/`);
+    dispatch(
+        incrementAsync({
+            result: result.data(),
+        })
+    );
+    // setTimeout(() => {
+    //     dispatch(increment());
+    // }, 1000);
+}
 
 export const decrement = (value) => ({
     type: DECREMENT,
