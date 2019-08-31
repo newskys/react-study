@@ -6,10 +6,15 @@ import { createStore } from 'redux';
 import reducers from './redux/reducers';
 import { Provider } from 'react-redux';
 
-const store = createStore(reducers);
+import { ConnectedRouter } from 'connected-react-router';
+import { history, store } from './redux/store';
+
+// const store = createStore(reducers);
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <ConnectedRouter history={history}>
+            <App />
+        </ConnectedRouter>
     </Provider>
 , document.getElementById('root'));
