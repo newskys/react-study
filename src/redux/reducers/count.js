@@ -3,7 +3,7 @@ const DECREMENT = 'DECREMENT';
 
 export const increment = (value) => ({
     type: INCREMENT,
-    payload: value,
+    payload: value, // 이게 뭐지!?
 });
 
 export const decrement = (value) => ({

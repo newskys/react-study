@@ -3,7 +3,7 @@ import count from './count';
 import memberInfo from './memberInfo';
 
 const reducers = combineReducers({
-    count,
+    count,memberInfo
     // 코드 추가
 });
 
