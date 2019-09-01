@@ -6,6 +6,13 @@ export const increment = (value) => ({
     payload: value,
 });
 
+export const incrementAsync = (value) => (dispatch) => {
+    setTimeout(
+      () => {
+        dispatch(increment(value));
+      }, 1000);
+};
+
 export const decrement = (value) => ({
     type: DECREMENT,
     payload: value,

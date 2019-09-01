@@ -1,7 +1,26 @@
+import axios from 'axios';
+
 const SET_MEMBER = 'SET_MEMBER';
 const SET_COLOR = 'SET_COLOR';
 
 // Action Creator
+
+export const getMemberInfo = () => async (dispatch) => {
+    const res = await axios.get(`https://tuhon.herokuapp.com/reactstudy/member`);
+
+    console.log(res);
+    dispatch(setMemberName(res.data.memberName));
+    dispatch(setColorName(res.data.colorName));
+};
+
+// export const getMemberInfo = () => (dispatch) => {
+//     axios.get(`https://tuhon.herokuapp.com/reactstudy/member`)
+//     .then(
+//         res => {
+//             console.log(res.data)
+//         });
+// };
+
 export const setMemberName = (memberName) => ({
     // 코드 추가
     type: SET_MEMBER,
