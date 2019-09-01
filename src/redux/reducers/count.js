@@ -6,6 +6,13 @@ export const increment = (value) => ({
     payload: value,
 });
 
+export const incrementAsync = (value) => dispatch => {
+    setTimeout(
+        () => {
+            dispatch(increment(value)); // increment에서도 value를 받았으니까!
+        },1000); // thunk가 없으면 여기서 dispatch 못 씀 (1초 후에 dispatch해주라)
+}
+
 export const decrement = (value) => ({
     type: DECREMENT,
     payload: value,

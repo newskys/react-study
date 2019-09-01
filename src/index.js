@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
+import 'babel-polyfill';
+
 import { Provider } from 'react-redux';
 
 import { ConnectedRouter } from 'connected-react-router';
 import { history, store } from './redux/store';
+// redux랑 react router를 같이 쓸 때 
 
 // const store = createStore(reducers);
 
