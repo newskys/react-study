@@ -51,4 +51,4 @@ class TodoList extends React.Component {
 }
 
 // export default TodoList;
-export default withRequest('https://jsonplaceholder.typicode.com/todos')(PostList);
+export default withRequest('https://jsonplaceholder.typicode.com/todos')(TodoList);
