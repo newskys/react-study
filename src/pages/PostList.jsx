@@ -2,25 +2,27 @@ import React from 'react';
 import axios from 'axios';
 import PostItem from './PostItem';
 import TopButton from './TopButton';
+import withRequest from './withRequest'; // import hoc
 
 class PostList extends React.Component {
-    state = {
-        images: null,
-    };
+    // state = {
+    //     images: null,
+    // };
 
-    componentDidMount() {
-        axios
-        .get('https://jsonplaceholder.typicode.com/photos')
-        .then((res) => {
-            console.log(res.data.slice(0, 10));
-            this.setState({
-                images: res.data.slice(0, 10),
-            });
-        });
-    }
+    // componentDidMount() {
+    //     axios
+    //     .get('https://jsonplaceholder.typicode.com/photos')
+    //     .then((res) => {
+    //         console.log(res.data.slice(0, 10));
+    //         this.setState({
+    //             images: res.data.slice(0, 10),
+    //         });
+    //     });
+    // }
 
     render() {
-        const { images } = this.state;
+        // const { images } = this.state;
+        const { data } = this.props; // 변수명 data 통일, props로 변경
 
         return (
             <>
@@ -29,7 +31,7 @@ class PostList extends React.Component {
                 </div>
 
                 <div className="container-fluid">
-                {images && images.map((item, index) =>
+                {data && data.map((item, index) => // images -> data로 변경
                     <PostItem key={`postitem-${index}`} item={item} />
                 )}
                 </div>
@@ -39,4 +41,5 @@ class PostList extends React.Component {
     }
 }
 
-export default PostList;
+// export default PostList;
+export default withRequest('https://jsonplaceholder.typicode.com/photos')(PostList);
