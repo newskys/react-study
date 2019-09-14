@@ -1,29 +1,30 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import withRequest from './withRequest'; // import hoc
 
 class TodoList extends React.Component {
-    state = {
-        todos: null,
-    };
+    // state = {
+    //     todos: null,
+    // };
 
-    componentDidMount() {
-        axios
-        .get('https://jsonplaceholder.typicode.com/todos')
-        .then((res) => {
-            console.log(res.data);
-            this.setState({
-            todos: res.data,
-            });
-        });
-    }
+    // componentDidMount() {
+    //     axios
+    //     .get('https://jsonplaceholder.typicode.com/todos')
+    //     .then((res) => {
+    //         console.log(res.data);
+    //         this.setState({
+    //         todos: res.data,
+    //         });
+    //     });
+    // }
 
     render() {
-        const { todos } = this.state;
+        const { data } = this.props; // 변수명 data로 변경, this.props
 
         return (
             <>
-                {todos && (
+                {data && ( // todos -> data
                     <table className="table table-striped table-hover table-bordered">
                         <thead>
                             <tr>
@@ -31,7 +32,7 @@ class TodoList extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                        {todos.map((item, index) =>
+                        {data.map((item, index) => // todos.map -> data.map
                             <tr key={`todo-${index}`}>
                                 <th>{item.id}</th>
                                 <td><Link to={`/todos/${item.id}`}>{item.title}</Link></td>
@@ -41,7 +42,7 @@ class TodoList extends React.Component {
                     </table>
                 )}
 
-                {!todos && (        
+                {!data && ( // todos -> data       
                         <div>Loading...</div>
                 )}          
             </>
@@ -49,4 +50,5 @@ class TodoList extends React.Component {
     }
 }
 
-export default TodoList;
+// export default TodoList;
+export default withRequest('https://jsonplaceholder.typicode.com/todos')(PostList);

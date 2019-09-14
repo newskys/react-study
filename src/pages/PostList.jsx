@@ -22,7 +22,7 @@ class PostList extends React.Component {
 
     render() {
         // const { images } = this.state;
-        const { data } = this.props; // 변수명 data 통일, props로 변경
+        const { data } = this.props; // 변수명 data로 변경, this.props
 
         return (
             <>

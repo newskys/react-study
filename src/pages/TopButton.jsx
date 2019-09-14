@@ -6,21 +6,7 @@ class TopButton extends React.Component {
     };
 
     handleClick = () => {
-        // 클릭했을 때 코드 작성
-        // const { toggle } = this.state;
-
-        // if (toggle) {
-        //     this.setState({
-        //         toggle: false
-        //     })
-        // }
-        // else {
-        //     this.setState({
-        //         toggle: true
-        //     })
-        // }
-
-        window.location.reload(); // 도저히 새로고침 없이 최상단 이동 방법을 모르겟듬...
+        window.location.reload();
     };
 
     render() {
