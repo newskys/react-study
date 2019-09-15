@@ -2,8 +2,9 @@ import React from 'react';
 import './Counter.css';
 
 import { connect } from 'react-redux';
-import { increment, decrement } from '../redux/reducers/count';
+import { increment, decrement ,incrementAsync} from '../redux/reducers/count';
 import { getMemberInfo } from '../redux/reducers/memberInfo';
+
 
 class Counter extends React.Component {
     memberNameRef = React.createRef();
@@ -15,7 +16,7 @@ class Counter extends React.Component {
 
     componentDidUpdate() {
         const memberNameRef = this.memberNameRef.current;
-        memberNameRef.
+       // memberNameRef.
         console.log(this.memberNameRef.current);
     }
 
@@ -51,7 +52,7 @@ export default connect(
         colorName: state.memberInfo.colorName,
     }),
     {
-        increment,
+        incrementAsync,
         decrement,
         getMemberInfo,
     },
