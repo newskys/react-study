@@ -17,7 +17,7 @@ class Counter extends React.Component {
     componentDidUpdate() {
         const memberNameRef = this.memberNameRef.current;
        // memberNameRef.
-        console.log(this.memberNameRef.current);
+        // console.log(this.memberNameRef.current);
     }
 
     render() {

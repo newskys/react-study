@@ -21,13 +21,15 @@ export const incrementAsync = (value) => (dispatch) => {
 //     payload: value,
 // })
 const count = handleActions({
-    INCREMENT : (state,action)=>({
-        count : state.count +action.value
+    INCREMENT : (state,action) => ({
+        count : state.count + action.payload,  
     }),
-    DECREMENT : (state,action)=>({
-        count : state.count -action.value
+    DECREMENT : (state,action) => ({
+        count : state.count - action.payload,
     })
-},{count:0})
+}, {
+    count: 0,
+})
 
 // const initialState = {
 //     count: 0,
